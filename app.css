@@ -1,0 +1,105 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #99E2D0;
+	height: 100vh;
+	font-family: sans-serif;
+}
+/* CSS du loader */
+.loader__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #99E2D0;;
+    z-index: 9999;
+    animation: desapear 1s linear forwards;
+    animation-delay: 3s;
+}
+@keyframes desapear {
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader {
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  line-height: 8rem;
+  border: 8px solid #fdcff0;
+  border-radius: 50%;
+  color: #FF79DA;
+  position: relative;
+  box-shadow: 0 0 20px 8px grey;
+}
+.loader .image {
+  height: 80px;
+  width: 80px;
+  background-color: #99E2D0;
+  font-size: 4em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  animation: ecrase 3s linear forwards;
+}
+.loader span {
+  font-size: 4em;
+  line-height: 8rem;
+  color: #FF79DA;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ecrase {
+  to {
+    height: 0;
+  }
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 8rem;
+  height: 8rem;
+  background-color: transparent;
+  border: 8px solid rgba(128, 128, 128, 0.548);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: rotate 5s linear infinite reverse;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 8rem;
+  height: 8rem;
+  border: 8px solid transparent;
+  background-color: transparent;
+  border-radius: 50%;
+  border-top-color: #FF79DA;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
